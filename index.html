@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muñeco corriendo del oso</title>
+
+<style>
+
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+background:#dcdcdc;
+overflow:hidden;
+}
+
+
+
+.contenedor{
+width:900px;
+height:600px;
+position:relative;
+
+background-image:url(img/FONDOL.png);
+background-size:100% 100%;
+background-repeat:no-repeat;
+background-position:center;
+
+overflow:hidden;
+}
+
+
+
+.personaje{
+position:absolute;
+width:900px;
+height:600px;
+
+animation:correr 8s linear infinite;
+}
+
+
+
+.sombrero{
+width:130px;
+height:130px;
+position:absolute;
+top:130px;
+left:360px;
+
+background-image:url(img/SOMBRERO.jpg);
+background-size:cover;
+background-position:center;
+
+clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
+z-index:20;
+}
+
+
+
+.cabeza{
+width:130px;
+height:130px;
+position:absolute;
+top:210px;
+left:360px;
+
+background-image:url(img/CARA.webp);
+background-size:cover;
+background-position:center;
+
+clip-path: circle(50%);
+
+z-index:10;
+}
+
+
+
+.brazos{
+width:220px;
+height:30px;
+position:absolute;
+top:330px;
+left:310px;
+
+background-image:url(img/polo.jpg);
+background-size:cover;
+background-position:center;
+
+clip-path: polygon(
+0% 50%,
+8% 0%,
+92% 0%,
+100% 50%,
+92% 100%,
+8% 100%
+);
+
+z-index:2;
+}
+
+
+.cuerpo{
+width:90px;
+height:200px;
+position:absolute;
+top:295px;
+left:380px;
+
+background-image:url(img/JIN.jpg);
+background-size:cover;
+background-position:center;
+
+clip-path: polygon(35% 0%, 65% 0%, 100% 100%, 0% 100%);
+
+z-index:1;
+}
+
+
+.pie1{
+width:70px;
+height:40px;
+position:absolute;
+top:475px;
+left:365px;
+
+background-image:url(img/ZAPATO.jpg);
+background-size:cover;
+background-position:center;
+
+clip-path: ellipse(45% 45% at 50% 50%);
+
+animation:pie1mov 0.4s infinite alternate;
+}
+
+.pie2{
+width:70px;
+height:40px;
+position:absolute;
+top:475px;
+left:420px;
+
+background-image:url(img/ZAPATO.jpg);
+background-size:cover;
+background-position:center;
+
+clip-path: ellipse(45% 45% at 50% 50%);
+
+animation:pie2mov 0.4s infinite alternate;
+}
+
+
+
+.cono{
+width:45px;
+height:90px;
+position:absolute;
+top:275px;
+left:500px;
+
+background-image:url(img/cono.png);
+background-size:cover;
+background-position:center;
+
+clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+}
+
+
+.bola1,.bola2,.bola3{
+width:45px;
+height:45px;
+position:absolute;
+
+background-image:url(img/FRESA.jpg);
+background-size:cover;
+background-position:center;
+
+clip-path: circle(50%);
+}
+
+.bola1{
+top:235px;
+left:485px;
+}
+
+.bola2{
+top:250px;
+left:515px;
+}
+
+.bola3{
+top:270px;
+left:490px;
+}
+
+
+
+@keyframes correr{
+
+0%{
+transform:translateX(0px);
+}
+
+50%{
+transform:translateX(250px);
+}
+
+100%{
+transform:translateX(0px);
+}
+
+}
+
+
+
+@keyframes pie1mov{
+
+from{
+transform:rotate(10deg);
+}
+
+to{
+transform:rotate(-10deg);
+}
+
+}
+
+@keyframes pie2mov{
+
+from{
+transform:rotate(-10deg);
+}
+
+to{
+transform:rotate(10deg);
+}
+
+}
+
+
+.oso{
+width:180px;
+height:180px;
+
+position:absolute;
+top:320px;
+left:30px;
+
+background-image:url(img/oso.png);
+background-size:contain;
+background-repeat:no-repeat;
+background-position:center;
+
+z-index:4;
+
+animation:
+osoCorre 8s linear infinite,
+osoSalto 0.5s infinite alternate;
+}
+
+
+
+@keyframes osoCorre{
+
+0%{
+transform:translateX(0px);
+}
+
+50%{
+transform:translateX(230px);
+}
+
+100%{
+transform:translateX(0px);
+}
+
+}
+
+
+
+@keyframes osoSalto{
+
+from{
+margin-top:0px;
+}
+
+to{
+margin-top:-10px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+
+
+<div class="personaje">
+
+<div class="sombrero"></div>
+
+<div class="cabeza"></div>
+
+<div class="brazos"></div>
+
+<div class="cuerpo"></div>
+
+<div class="pie1"></div>
+
+<div class="pie2"></div>
+
+<div class="cono"></div>
+
+<div class="bola1"></div>
+<div class="bola2"></div>
+<div class="bola3"></div>
+
+</div>
+
+
+
+<div class="oso"></div>
+
+</div>
+
+</body>
+</html>
